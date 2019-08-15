@@ -7,15 +7,15 @@ import static io.restassured.RestAssured.given;
 import static org.hamcrest.CoreMatchers.is;
 
 @QuarkusTest
-public class TransferTest {
+class EndpointTest {
 
     @Test
-    public void testHelloEndpoint() {
+    void testHelloEndpoint() {
         given()
-          .when().get("/transfer")
+          .when().get("/transfer/balance/Yuriy")
           .then()
              .statusCode(200)
-             .body(is("hello"));
+             .body(is("Hello Yuriy"));
     }
 
 }
