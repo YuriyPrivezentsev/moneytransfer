@@ -1,0 +1,5 @@
+= Sanadbox project using Quarkus
+
+== Objectives
+Check possibilities of https://quarkus.io/guides/getting-started-guide[Quarkus] framework basing on a simple application
+doing money transfers.
