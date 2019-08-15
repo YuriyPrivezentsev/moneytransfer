@@ -1,6 +1,8 @@
 package com.lucky.moneytransfer.controller;
 
 import com.lucky.moneytransfer.service.TransferManager;
+import org.eclipse.microprofile.openapi.annotations.Operation;
+import org.eclipse.microprofile.openapi.annotations.parameters.Parameter;
 
 import javax.inject.Inject;
 import javax.ws.rs.GET;
@@ -19,7 +21,8 @@ public class Endpoint {
     @GET
     @Produces(MediaType.TEXT_PLAIN)
     @Path("/balance/{uid}")
-    public String balance(@PathParam("uid") String uid) {
+    @Operation(description = "Get user accounts' balance")
+    public String balance(@Parameter(name = "uid", description = "Unique user identificator", required = true) @PathParam("uid") String uid) {
         return service.getBalance(uid);
     }
 }
